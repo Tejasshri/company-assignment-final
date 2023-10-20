@@ -1,0 +1,157 @@
+.header {
+  background-color: #111111;
+  color: white;
+  padding: 10px 20px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+}
+.back-icon {
+  cursor: pointer;
+}
+
+.title-and-place {
+  margin-left: 20px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 4px 0;
+}
+.title span {
+  border: 2px solid white;
+  font-size: 12px;
+  border-radius: 50%;
+  padding: 4px;
+  font-family: "Times New Roman", Times, serif;
+  margin-left: 10px;
+}
+
+.place {
+  margin: 10px 0;
+  font-size: 14px;
+  color: rgb(181, 175, 175);
+  font-weight: 600;
+}
+
+.left-container {
+  display: flex;
+  align-items: center;
+}
+
+.ticket-count-btn,
+.close-btn {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  width: 100px;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.pencil-icon {
+  margin-left: 10px;
+}
+
+.close-btn {
+  border: none;
+  height: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* * {
+  border: 1px solid rgb(248, 5, 5);
+} */
+
+.popup-box {
+  height: 400px;
+  width: 500px;
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 16px 4px rgb(3, 3, 3);
+  border-radius: 6px;
+  background-color: white;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ticket-num-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: auto;
+  width: 90%;
+}
+.popup-box h1 {
+  font-family: "Times New Roman", Times, serif;
+  margin: 4px;
+  font-size: 20px;
+}
+
+.ticket-num-btn,
+.selected-ticket-count {
+  color: black;
+  font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  align-self: stretch;
+}
+
+.selected-ticket-count {
+  border-radius: 50%;
+  background-color: rgb(55, 244, 13);
+  padding: 4px;
+  color: white;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.price-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 20px;
+}
+
+.price-container p {
+  margin: 4px;
+}
+.price-container p:nth-child(1) {
+  color: grey;
+  font-size: 14px;
+  margin: 0px;
+}
+
+.seat-select-button {
+  width: 300px;
+  height: 40px;
+  margin: 10px;
+  background-color: rgb(226, 17, 17);
+  border: 0px;
+  border-radius: 6px;
+  color: white;
+  font-size: 18px;
+}
+
+.availability {
+  color: rgb(5, 237, 152);
+}
