@@ -4,13 +4,14 @@
 }
 
 .booking-app {
-  height: 100vh;
+  max-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .ticket-booking-section {
   flex-grow: 1;
+  overflow-y: auto;
 }
 
 section.show-time-buttons {

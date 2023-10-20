@@ -62,7 +62,8 @@ class BookingApp extends React.Component {
     this.setState((p) => ({ bill: p.bill + price }), this.seatCount);
   };
 
-  handleBook = (row, index) => {
+  handleBook = (row, index, event) => {
+    event.target.style.backgroundColor = "red !important";
     const { premiumSeatList, bookTicket, ticket } = this.state;
     if (ticket === bookTicket) {
       alert(`You have been booked two tickets 
@@ -110,8 +111,8 @@ class BookingApp extends React.Component {
                 className={eachTd.booked ? "seat-box" : "seat-box-unbook"}
                 key={v4()}
                 disabled={eachTd.bookList}
-                onClick={() => {
-                  this.handleBook(each, index);
+                onClick={(e) => {
+                  this.handleBook(each, index, e);
                 }}
               >
                 {eachTd.seatNo}

@@ -34,6 +34,7 @@ ul {
 }
 
 .available span {
+  border: 1px solid green;
 }
 
 .selected span {
