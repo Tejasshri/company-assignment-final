@@ -2,6 +2,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 import { BsPencil } from "react-icons/bs";
 import Popup from "reactjs-popup";
+import { v4 } from "uuid";
 import "./index.css";
 
 const overlayStyle = {
@@ -9,6 +10,10 @@ const overlayStyle = {
 };
 
 const ticketCount = [1, 2, 3, 4, 5, 6, 7, 8];
+
+let pdate = new Date();
+let date = pdate.toLocaleString("default", { month: "long" });
+console.log(date);
 
 const Header = (props) => {
   const { close, ticket, handleTicketCount, availability } = props;
@@ -22,7 +27,8 @@ const Header = (props) => {
               Brahmastra <span>UA</span>
             </h1>
             <p className="place">
-              INOX: World Mark, Gurugram | Today, 20 Oct, 08:15 PM
+              INOX: World Mark, Gurugram | Today, {pdate.getDate()} {date}{" "}
+              {pdate.toLocaleTimeString()}
             </p>
           </div>
         </div>
@@ -51,20 +57,21 @@ const Header = (props) => {
                             : "selected-ticket-count"
                         }
                         onClick={() => handleTicketCount(each)}
+                        key={v4()}
                       >
                         {each}
                       </button>
                     ))}
                   </div>
                   <div className="price-container">
-                    <div>
+                    <div key={v4()}>
                       <p>Premium</p>
                       <p>540Rs</p>
                       <span className="availability">
                         Available {availability[0]}
                       </span>
                     </div>
-                    <div>
+                    <div key={v4()}>
                       <p>Standard</p>
                       <p>420Rs</p>
                       <span className="availability">

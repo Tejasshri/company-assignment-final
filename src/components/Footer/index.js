@@ -1,5 +1,3 @@
-import Popup from "reactjs-popup";
-
 import "./index.css";
 
 const Footer = (props) => {
