@@ -30,15 +30,6 @@ class SeatsSection extends Component {
   getData = async () => {
     const { renderData } = this.props;
     this.setState({ apiStatus: apiStatusConstants.inprogress });
-    // const response = await fetch("http://localhost:3001/");
-    // const data = await response.json();
-    // this.setState(
-    //   {
-    //     premiumSeats: data.premium,
-    //     standardSeats: data.standard,
-    //   },
-    //   this.setAvailableSeats
-    // );
     await renderData();
 
     setTimeout(() => {
