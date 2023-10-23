@@ -28,15 +28,14 @@ class SeatsSection extends Component {
   };
 
   getData = async () => {
-    const { renderData } = this.props;
+    alert("Please ensure that server is running else seat won't be visible");
+    const { renderData, isError } = this.props;
+    console.log(isError);
     this.setState({ apiStatus: apiStatusConstants.inprogress });
     await renderData();
-
-    setTimeout(() => {
-      this.setState({
-        apiStatus: apiStatusConstants.success,
-      });
-    }, 1000);
+    this.setState({
+      apiStatus: apiStatusConstants.success,
+    });
   };
 
   componentDidMount() {
@@ -64,7 +63,12 @@ class SeatsSection extends Component {
     );
   };
 
-  failureView = () => <div className="failure-view"></div>;
+  failureView = () => (
+    <div className="failure-view">
+      <h1>Server Error You have to run server first</h1>
+      <p>Server is not running</p>
+    </div>
+  );
 
   loadingView = () => (
     <div className="loading-view">
@@ -86,6 +90,14 @@ class SeatsSection extends Component {
     const premiumSeatsRows = Object.keys(premiumSeats);
     return (
       <div>
+        {premiumSeatsRows.length === 0 && (
+          <>
+            <h1>Server Error You need to first run the server</h1>
+            <a href="https://github.com/Tejasshri/company-assignment-final.git">
+              github repository url
+            </a>
+          </>
+        )}
         {premiumSeatsRows.map((eachRow) => (
           <SeatRow key={v4()} seatsList={premiumSeats[eachRow]} />
         ))}
@@ -97,6 +109,14 @@ class SeatsSection extends Component {
     const standardSeatsRows = Object.keys(standardSeats);
     return (
       <div>
+        {standardSeatsRows.length === 0 && (
+          <>
+            <h1>Server Error You need to first run the server</h1>
+            <a href="https://github.com/Tejasshri/company-assignment-final.git">
+              github repository url
+            </a>
+          </>
+        )}
         {standardSeatsRows.map((eachRow) => (
           <SeatRow key={v4()} seatsList={standardSeats[eachRow]} />
         ))}
@@ -129,6 +149,8 @@ class SeatsSection extends Component {
         return this.loadingView();
       case apiStatusConstants.success:
         return this.renderTableView();
+      case apiStatusConstants.failure:
+        return this.failureView();
       default:
         return null;
     }

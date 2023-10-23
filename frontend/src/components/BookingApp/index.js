@@ -11,21 +11,26 @@ class BookingApp extends React.Component {
     show: true,
     premiumSeats: {},
     standardSeats: {},
+    isError: false,
   };
 
   getData = async () => {
-    const response = await fetch("http://localhost:3001/");
-    const data = await response.json();
-    this.setState({
-      premiumSeats: data.premium,
-      standardSeats: data.standard,
-    });
+    try {
+      const response = await fetch("http://localhost:3001/");
+      const data = await response.json();
+      this.setState({
+        premiumSeats: data.premium,
+        standardSeats: data.standard,
+      });
+    } catch (error) {
+      this.setState({ isError: true });
+    }
   };
 
   close = () => this.setState({ show: false });
 
   render() {
-    const { show, premiumSeats, standardSeats } = this.state;
+    const { show, premiumSeats, standardSeats, isError } = this.state;
     return (
       <div className="booking-app">
         {show && <Header close={this.close} />}
@@ -33,6 +38,7 @@ class BookingApp extends React.Component {
           renderData={this.getData}
           premiumSeats={premiumSeats}
           standardSeats={standardSeats}
+          isError={isError}
         />
         <Footer renderData={this.getData} />
       </div>
