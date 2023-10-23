@@ -1,0 +1,54 @@
+CREATE TABLE standard (
+    id int auto_increment primary key,
+    row TEXT DEFAULT 'A',
+    is_booked BOOLEAN DEFAULT true
+);
+
+INSERT INTO premium (
+    
+) ;
+
+
+CREATE TABLE category ( 
+   ...> id int primary key ,
+   ...> name VARCHAR(10) 
+   ...> ) ;
+sqlite> INSRET INTO primary VALUES (1, 'primary');
+Error: near "INSRET": syntax error
+sqlite> INSErT INTO primary VALUES (1, 'primary');
+Error: near "primary": syntax error
+sqlite> INSErT INTO category VALUES (1, 'primary');
+sqlite> INSErT INTO category VALUES (2, 'standard');
+sqlite> select * from category ;
+1|primary
+2|standard
+CREATE TABLE row ( 
+row_id VARCHAR PRIMARY KEY,
+category VARCHAR ) ;
+INSERT INTO row VALUES 
+('A', 'PREMIUM'),
+('B', 'PREMIUM'); 
+
+INSERT INTO row VALUES 
+('A', 'PREMIUM'),
+('B', 'PREMIUM') ;
+
+
+INSERT INTO row VALUES 
+('C', 'PREMIUM'),
+('D', 'PREMIUM'),
+('E', 'STANDARD'),
+('F', 'STANDARD'),
+('G', 'STANDARD'),
+('H', 'STANDARD'),
+('I', 'STANDARD'),
+('J', 'STANDARD'),
+('K', 'STANDARD') ;                              
+
+
+CREATE TABLE seat (
+    id INTEGER primary key autoincrement,
+    is_booked BOOLEAN DEFAULT false ,
+    seat_no INT,
+    row_id VARCHAR
+);

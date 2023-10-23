@@ -1,0 +1,58 @@
+.seat-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.row-number {
+  position: absolute;
+  left: 0px;
+  margin: 0;
+  color: rgb(95, 89, 89);
+}
+
+.booked-seat-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin: 5px var(--im);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: rgba(240, 240, 240, 0.9);
+  color: white;
+}
+.unbooked-seat-button,
+.selected-seat-button {
+  width: 30px;
+  height: 30px;
+  border: 1px solid black;
+  border-radius: 4px;
+  margin: 5px var(--im);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  background-color: white;
+  border: 1px solid rgb(12, 229, 8);
+  color: rgb(16, 231, 91);
+}
+
+.unbooked-seat-button:hover {
+  background-color: rgb(12, 229, 8);
+  color: white;
+}
+
+.selected-seat-button {
+  background-color: rgb(12, 229, 8);
+  color: white;
+}
+
+.gap {
+  background-color: transparent;
+  border: transparent;
+  cursor: default;
+}

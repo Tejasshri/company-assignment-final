@@ -1,0 +1,14 @@
+:root {
+  --im: !important;
+  --f: flex;
+}
+
+.booking-app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* * {
+  border: 1px solid red;
+} */
